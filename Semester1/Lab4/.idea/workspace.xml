@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ecc09659-67c3-4319-b131-17069a8a3b24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab1/Lab1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab2/Lab2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/Lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/out/production/Lab3/Lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/src/Counter3_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jumble.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Counter3_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Lab4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/String1_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab5/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab5/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab5/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab5/Lab5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab5/src/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab5/src/Lab5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/Lab6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/ApartmentBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/Building.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/Cubicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/House.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/OfficeBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/Roof.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/Rooms.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/Unit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab6/src/Walls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examPrep/Fire.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examPrep/Tabbed.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examPrep/examPrep.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examPrep/src/FireStationStat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examPrep/src/LabExam.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examPrep/src/ReadTabbed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../examPrep/src/TempConvert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Recursion/src/Recursion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week2/src/Box.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week2/src/LightSwitch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week2/src/StringDetails.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week3/src/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week3/src/ArrayDemos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week3/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week3/src/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week3/src/searchArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week3/src/trtr.txt.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week4/src/Lab3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sampleCode/Week5/src/Jumble.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="206ASIqtATpumW1Ik3HomWLy8t3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab5" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="profiler.jvm" />
+  </component>
+  <component name="RunManager" selected="Application.Lab4">
+    <configuration name="Arrays4_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Arrays4_1" />
+      <module name="Lab4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArraysThing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ArraysThing" />
+      <module name="Lab4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Counter3_1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Counter3_1" />
+      <module name="Lab4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Lab4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Lab4" />
+      <module name="Lab4" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Lab4" />
+        <item itemvalue="Application.Arrays4_1" />
+        <item itemvalue="Application.ArraysThing" />
+        <item itemvalue="Application.Counter3_1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ecc09659-67c3-4319-b131-17069a8a3b24" name="Changes" comment="" />
+      <created>1635354663775</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635354663775</updated>
+      <workItem from="1635354665464" duration="5042000" />
+      <workItem from="1635365920925" duration="1132000" />
+      <workItem from="1635367179361" duration="6341000" />
+      <workItem from="1635460341409" duration="2104000" />
+      <workItem from="1635462548728" duration="3621000" />
+      <workItem from="1635507021636" duration="3463000" />
+      <workItem from="1635513125245" duration="58000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
