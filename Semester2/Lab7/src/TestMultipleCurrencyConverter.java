@@ -24,6 +24,7 @@ public class TestMultipleCurrencyConverter {
                 amount = input.nextDouble();
             }else{
                 System.out.println("Error: Amount must be numerical.");
+                converter();
             }
 
             if (from.equalsIgnoreCase("USD") && to.equalsIgnoreCase("EUR")) {
@@ -52,10 +53,9 @@ public class TestMultipleCurrencyConverter {
                 System.out.println(MultipleCurrencyConverter.convertGBPtoCNY(amount));
             } else {
                 System.out.println("Error: Enter USD/EUR/CNY/GBP only.");
+                converter();
             }
-            if(input.hasNext()){
-                input.next();
-            }
+
             System.out.println("Would you like to use the converter again? Y/N?");
             if(input.next().equalsIgnoreCase("N")) {
                 convert = false;
