@@ -32,7 +32,7 @@ public class Lab5 {
             }
             if (leastIndex != i) {
                 //1.4 reuse the method for swapping
-                Counter3_1.swap(input, i, leastIndex);
+                Counter3_1_5.swap(input, i, leastIndex);
             }
         }
         for(String i : input) {

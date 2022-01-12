@@ -71,7 +71,7 @@ public class Lab4 {
         }
         try {
             //Jumbles the contents array
-            Counter3_1.jumble(contents);
+            Counter3_1_4.jumble(contents);
 
             //Prints array to files
             for (int i = 0; i < numFiles; i++) {
@@ -79,7 +79,7 @@ public class Lab4 {
                 PrintWriter pw = new PrintWriter("file" + i + ".txt");
                 pw.println(contents[i]);
                 pw.close();
-                Counter3_1.reader(new File("file" + i + ".txt"));
+                Counter3_1_4.reader(new File("file" + i + ".txt"));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

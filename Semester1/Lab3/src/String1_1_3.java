@@ -1,7 +1,7 @@
 //1. Create an application which will read a word from the command line, using a method(s) will analyse the string and state its length, number of vowels, first letter and last letter.
 import java.util.Scanner;
 
-public class String1_1 {
+public class String1_1_3 {
     public static int vowels = 0;
 
     /**
