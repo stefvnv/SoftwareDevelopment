@@ -63,6 +63,7 @@ public class CurrencyConverterGUI extends JFrame{
     }
 
 
+    //Action listeners
     public void actionAddUSD(ActionListener d){
         text_usd.addActionListener(d);
     }
@@ -80,6 +81,7 @@ public class CurrencyConverterGUI extends JFrame{
     }
 
 
+    //Getters and setters
     public String getText_usd() {
         return text_usd.getText();
     }

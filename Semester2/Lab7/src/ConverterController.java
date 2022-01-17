@@ -1,9 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class ConverterController{
-
     private CurrencyConverterGUI view = new CurrencyConverterGUI();
     private MultipleCurrencyConverter model = new MultipleCurrencyConverter();
 
@@ -14,19 +12,19 @@ public class ConverterController{
         this.view = new CurrencyConverterGUI();
         this.model = new MultipleCurrencyConverter();
 
-        //
+        //Creates event listeners
         new USDactionAdd();
         new EURactionAdd();
         new CNYactionAdd();
         new GBPactionAdd();
 
-        //
+        //Initializes GUI
         view.init();
     }
 
 
     /**
-     * Adds USD action listener
+     * USD action listener
      */
     class USDactionAdd implements ActionListener {
         public USDactionAdd(){
@@ -54,7 +52,7 @@ public class ConverterController{
 
 
     /**
-     *
+     * EUR action listener
      */
     class EURactionAdd implements ActionListener {
         public EURactionAdd(){
@@ -82,7 +80,7 @@ public class ConverterController{
 
 
     /**
-     *
+     * CNY action listener
      */
     class CNYactionAdd implements ActionListener {
         public CNYactionAdd(){
@@ -110,7 +108,7 @@ public class ConverterController{
 
 
     /**
-     *
+     * GBP action listener
      */
     class GBPactionAdd implements ActionListener {
         public GBPactionAdd(){
@@ -137,7 +135,7 @@ public class ConverterController{
     }
 
     public static void main(String[] args) {
-        //Initializes a new GUI
+        //Initializes a new controller
         new ConverterController();
     }
 }

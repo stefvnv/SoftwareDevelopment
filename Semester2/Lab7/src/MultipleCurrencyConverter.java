@@ -1,13 +1,12 @@
 //2. Extend the CurrencyConverter class to become MultipleCurrencyConverter
 
 public class MultipleCurrencyConverter extends CurrencyConverter implements BaseCurrency{
-    private final double baseCurrency;
     private double amountUSD;
     private double amountEUR;
     private double amountCNY;
     private double amountGBP;
 
-    public MultipleCurrencyConverter(){this.baseCurrency = USD;}
+    public MultipleCurrencyConverter(){}
 
 
     /**
@@ -98,40 +97,18 @@ public class MultipleCurrencyConverter extends CurrencyConverter implements Base
     }
 
 
-    public double getAmountUSD() {
-        return amountUSD;
-    }
-
-
+    //Setters
     public void setAmountUSD(double amountUSD) {
         this.amountUSD = amountUSD;
     }
-
-
-    public double getAmountEUR() {
-        return amountEUR;
-    }
-
 
     public void setAmountEUR(double amountEUR) {
         this.amountEUR = amountEUR;
     }
 
-
-    public double getAmountCNY() {
-        return amountCNY;
-    }
-
-
     public void setAmountCNY(double amountCNY) {
         this.amountCNY = amountCNY;
     }
-
-
-    public double getAmountGBP() {
-        return amountGBP;
-    }
-
 
     public void setAmountGBP(double amountGBP) {
         this.amountGBP = amountGBP;

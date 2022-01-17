@@ -18,7 +18,7 @@ public class TestCurrencyConverter {
             //Stores users input into 'amount' if it's a number and prints converted 'amount'
             if (input.hasNextDouble()) {
                 amount = input.nextDouble();
-                System.out.println("€" + amount + " EUR converted to USD is $" + currency.convertEURtoUSD(amount));
+                System.out.println("€" + amount + " converted to USD is $" + currency.convertEURtoUSD(amount));
 
                 //otherwise, prints error message and asks for user input
             }else{

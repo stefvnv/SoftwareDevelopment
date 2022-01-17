@@ -1,22 +1,10 @@
 //1. Create a class CurrencyConverter which implements an Interface BaseCurrency(USD)
 public class CurrencyConverter implements BaseCurrency {
-    private final double baseCurrency;
-
 
     /**
-     *
+     * Empty constructor
      */
-    public CurrencyConverter(){
-        this.baseCurrency = USD;
-    }
-
-
-    /**
-     *
-     */
-    public CurrencyConverter(double c){
-        this.baseCurrency = c;
-    }
+    public CurrencyConverter(){}
 
 
     /**
