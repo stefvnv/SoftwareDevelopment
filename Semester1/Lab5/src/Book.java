@@ -1,8 +1,9 @@
 //2. Create a class Book which validates the arguments to be non-null
 public class Book implements Comparable<Book> {
 
-    private String title, author;
-    private double price;
+    private final String title;
+    private final String author;
+    private final double price;
 
     private static int sortingMethod = 1;
 

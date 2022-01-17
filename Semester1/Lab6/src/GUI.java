@@ -7,24 +7,24 @@ import java.awt.event.ActionListener;
 public class GUI extends JFrame implements ActionListener {
 
     //Creates buttons, building, house, apartment and office panels
-    private JPanel panel_buttons = new JPanel();
-    private JPanel panel_building = new JPanel();
-    private JPanel panel_house = new JPanel();
-    private JPanel panel_apartment = new JPanel();
-    private JPanel panel_office = new JPanel();
+    private final JPanel panel_buttons = new JPanel();
+    private final JPanel panel_building = new JPanel();
+    private final JPanel panel_house = new JPanel();
+    private final JPanel panel_apartment = new JPanel();
+    private final JPanel panel_office = new JPanel();
 
     //Creates house, apartment and office buttons
-    private JButton button_house = new JButton("Select: House");
-    private JButton button_apartment = new JButton("<html>Select: Apartment<br> Block</html>");
-    private JButton button_office = new JButton("<html>Select: Office<br> Block</html>");
+    private final JButton button_house = new JButton("Select: House");
+    private final JButton button_apartment = new JButton("<html>Select: Apartment<br> Block</html>");
+    private final JButton button_office = new JButton("<html>Select: Office<br> Block</html>");
 
     //Creates walls and roof labels (used for all building types)
-    private JLabel label_walls = new JLabel("Walls: ");
-    private JLabel label_roof = new JLabel("Roof: ");
+    private final JLabel label_walls = new JLabel("Walls: ");
+    private final JLabel label_roof = new JLabel("Roof: ");
 
-    private JLabel label_rooms = new JLabel("Rooms: ");
-    private JLabel label_unit = new JLabel("Unit: ");
-    private JLabel label_cubicle = new JLabel("Cubicle: ");
+    private final JLabel label_rooms = new JLabel("Rooms: ");
+    private final JLabel label_unit = new JLabel("Unit: ");
+    private final JLabel label_cubicle = new JLabel("Cubicle: ");
 
 
     /**

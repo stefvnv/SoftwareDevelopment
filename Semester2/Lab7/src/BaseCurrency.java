@@ -1,4 +1,4 @@
-public interface BaseCurrency {
+public interface BaseCurrency{
     double USD = 1;
 
     //modify the interface for the currencies Euro, Yuan, and GBP

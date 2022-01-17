@@ -1,8 +1,10 @@
 //2. A class Box complete with getter,setter and constructor  methods, it should have dimensions, name, status(full/empty)
 public class Box1_2 {
 
-    private String Box1_2Name;
-    private int w, h, d;
+    private final String Box1_2Name;
+    private final int w;
+    private final int h;
+    private final int d;
     private boolean full = false;
 
     /**

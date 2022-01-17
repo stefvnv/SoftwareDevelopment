@@ -1,22 +1,26 @@
-//3. Create a GUI which can update a display for all currencies based on the input of an amount in any currency field
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+//3. Create a GUI which can update a display for all currencies based on the input of an amount in any currency field
 public class CurrencyConverterGUI extends JFrame{
 
-    private JLabel label_usd = new JLabel("$", SwingConstants.CENTER);
-    private JLabel label_eur = new JLabel("€", SwingConstants.CENTER);
-    private JLabel label_cny = new JLabel("¥", SwingConstants.CENTER);
-    private JLabel label_gbp = new JLabel("£", SwingConstants.CENTER);
+    //Creates labels and textboxes for USD, EUR, CNY AND GBP
+    private final JLabel label_usd = new JLabel("$", SwingConstants.CENTER);
+    private final JLabel label_eur = new JLabel("€", SwingConstants.CENTER);
+    private final JLabel label_cny = new JLabel("¥", SwingConstants.CENTER);
+    private final JLabel label_gbp = new JLabel("£", SwingConstants.CENTER);
 
-    private JTextField text_usd = new JTextField();
-    private JTextField text_eur = new JTextField();
-    private JTextField text_cny = new JTextField();
-    private JTextField text_gbp = new JTextField();
+    private final JTextField text_usd = new JTextField();
+    private final JTextField text_eur = new JTextField();
+    private final JTextField text_cny = new JTextField();
+    private final JTextField text_gbp = new JTextField();
 
 
+    /**
+     * Sets GUI title, size, layout and sets resizeable to false
+     * Adds colour to textboxes and labels
+     */
     public CurrencyConverterGUI(){
         this.setTitle("Currency Converter");
         this.setSize(300,100);
@@ -36,42 +40,44 @@ public class CurrencyConverterGUI extends JFrame{
         this.label_gbp.setForeground(new Color(200,200,200));
     }
 
+
+    /**
+     * Initializes the GUI
+     */
     public void init(){
+
+        //Adds labels to GUI
         this.add(label_usd);
         this.add(label_eur);
         this.add(label_cny);
         this.add(label_gbp);
 
+        //Adds textboxes to GUI
         this.add(text_usd);
         this.add(text_eur);
         this.add(text_cny);
         this.add(text_gbp);
 
+        //Sets visibility of GUI to true
         this.setVisible(true);
     }
 
 
     public void actionAddUSD(ActionListener d){
         text_usd.addActionListener(d);
-
     }
 
     public void actionAddEUR(ActionListener e){
         text_eur.addActionListener(e);
-
     }
 
     public void actionAddCHY(ActionListener c){
         text_cny.addActionListener(c);
-
     }
 
     public void actionAddGBP(ActionListener p){
         text_gbp.addActionListener(p);
-
     }
-
-
 
 
     public String getText_usd() {

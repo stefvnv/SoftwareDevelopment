@@ -3,61 +3,76 @@ import java.util.Scanner;
 public class TestMultipleCurrencyConverter {
 
     /**
-     *
+     * Converts USD, EUR, CNY, GBP currencies according to user input
      */
-    public static void converter(){
+    public static void converter() {
+        boolean convert = true;
+        double amount = 0;
+
         Scanner input = new Scanner(System.in);
 
-        boolean convert = true;
+        //Creates a new instance of MultipleCurrencyConverter
+        MultipleCurrencyConverter currency = new MultipleCurrencyConverter();
 
-        while(convert){
-            System.out.println("Enter the currency to convert from (USD/EUR/CNY/GBP): ");
+        //While convert is true
+        while (convert) {
+            System.out.println("\nEnter the currency to convert from (USD/EUR/CNY/GBP): ");
+
+            //Takes user input and stores it into 'from' variable
             String from = input.next();
 
-            System.out.println("Enter the currency to convert to (USD/EUR/CNY/GBP): ");
+            System.out.println("\nEnter the currency to convert to (USD/EUR/CNY/GBP): ");
+
+            //Takes user input and stores it into 'to' variable
             String to = input.next();
 
-            System.out.println("Enter amount to convert: ");
-            double amount = 0;
+            System.out.println("\nEnter amount to convert: ");
 
+            //Stores users input into 'amount' if it's a number
             if (input.hasNextDouble()) {
                 amount = input.nextDouble();
-            }else{
-                System.out.println("Error: Amount must be numerical.");
-                converter();
-            }
 
-            if (from.equalsIgnoreCase("USD") && to.equalsIgnoreCase("EUR")) {
-                System.out.println(MultipleCurrencyConverter.convertUSDtoEUR(amount));
-            } else if (from.equalsIgnoreCase("USD") && to.equalsIgnoreCase("CNY")) {
-                System.out.println(MultipleCurrencyConverter.convertUSDtoCNY(amount));
-            } else if (from.equalsIgnoreCase("USD") && to.equalsIgnoreCase("GBP")) {
-                System.out.println(MultipleCurrencyConverter.convertUSDtoGBP(amount));
-            } else if (from.equalsIgnoreCase("EUR") && to.equalsIgnoreCase("USD")) {
-                System.out.println(MultipleCurrencyConverter.convertEURtoUSD(amount));
-            } else if (from.equalsIgnoreCase("EUR") && to.equalsIgnoreCase("CNY")) {
-                System.out.println(MultipleCurrencyConverter.convertEURtoCNY(amount));
-            } else if (from.equalsIgnoreCase("EUR") && to.equalsIgnoreCase("GBP")) {
-                System.out.println(MultipleCurrencyConverter.convertEURtoGBP(amount));
-            } else if (from.equalsIgnoreCase("CNY") && to.equalsIgnoreCase("USD")) {
-                System.out.println(MultipleCurrencyConverter.convertCNYtoUSD(amount));
-            } else if (from.equalsIgnoreCase("CNY") && to.equalsIgnoreCase("EUR")) {
-                System.out.println(MultipleCurrencyConverter.convertCNYtoEUR(amount));
-            } else if (from.equalsIgnoreCase("CNY") && to.equalsIgnoreCase("GBP")) {
-                System.out.println(MultipleCurrencyConverter.convertCNYtoGBP(amount));
-            } else if (from.equalsIgnoreCase("GBP") && to.equalsIgnoreCase("USD")) {
-                System.out.println(MultipleCurrencyConverter.convertGBPtoUSD(amount));
-            } else if (from.equalsIgnoreCase("GBP") && to.equalsIgnoreCase("EUR")) {
-                System.out.println(MultipleCurrencyConverter.convertGBPtoEUR(amount));
-            } else if (from.equalsIgnoreCase("GBP") && to.equalsIgnoreCase("CNY")) {
-                System.out.println(MultipleCurrencyConverter.convertGBPtoCNY(amount));
+                //otherwise, prints error message and calls 'converter' method
             } else {
-                System.out.println("Error: Enter USD/EUR/CNY/GBP only.");
+                System.out.println("\nError: Amount must be numerical.");
                 converter();
             }
 
-            System.out.println("Would you like to use the converter again? Y/N?");
-            if(input.next().equalsIgnoreCase("N")) {
+            //Calls a convert method depending on which currencies user inputs and prints the converted 'amount'
+            if (from.equalsIgnoreCase("USD") && to.equalsIgnoreCase("EUR")) {
+                System.out.println("\n€" + currency.convertUSDtoEUR(amount));
+            } else if (from.equalsIgnoreCase("USD") && to.equalsIgnoreCase("CNY")) {
+                System.out.println("\n¥" + currency.convertUSDtoCNY(amount));
+            } else if (from.equalsIgnoreCase("USD") && to.equalsIgnoreCase("GBP")) {
+                System.out.println("\n£" + currency.convertUSDtoGBP(amount));
+            } else if (from.equalsIgnoreCase("EUR") && to.equalsIgnoreCase("USD")) {
+                System.out.println("\n$" + currency.convertEURtoUSD(amount));
+            } else if (from.equalsIgnoreCase("EUR") && to.equalsIgnoreCase("CNY")) {
+                System.out.println("\n¥" + currency.convertEURtoCNY(amount));
+            } else if (from.equalsIgnoreCase("EUR") && to.equalsIgnoreCase("GBP")) {
+                System.out.println("\n£" + currency.convertEURtoGBP(amount));
+            } else if (from.equalsIgnoreCase("CNY") && to.equalsIgnoreCase("USD")) {
+                System.out.println("\n$" + currency.convertCNYtoUSD(amount));
+            } else if (from.equalsIgnoreCase("CNY") && to.equalsIgnoreCase("EUR")) {
+                System.out.println("\n€" + currency.convertCNYtoEUR(amount));
+            } else if (from.equalsIgnoreCase("CNY") && to.equalsIgnoreCase("GBP")) {
+                System.out.println("\n£" + currency.convertCNYtoGBP(amount));
+            } else if (from.equalsIgnoreCase("GBP") && to.equalsIgnoreCase("USD")) {
+                System.out.println("\n$" + currency.convertGBPtoUSD(amount));
+            } else if (from.equalsIgnoreCase("GBP") && to.equalsIgnoreCase("EUR")) {
+                System.out.println("\n€" + currency.convertGBPtoEUR(amount));
+            } else if (from.equalsIgnoreCase("GBP") && to.equalsIgnoreCase("CNY")) {
+                System.out.println("\n¥" + currency.convertGBPtoCNY(amount));
+
+                //Prints error message if incorrect input is entered and calls 'converter' method
+            } else {
+                System.out.println("\nError: Enter USD/EUR/CNY/GBP only.");
+                converter();
+            }
+            System.out.println("\nWould you like to use the converter again? Y/N?");
+
+            //Sets 'convert' to false if user enters 'N'
+            if (input.next().equalsIgnoreCase("N")) {
                 convert = false;
             }
         }

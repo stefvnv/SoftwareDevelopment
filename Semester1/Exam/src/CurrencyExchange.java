@@ -18,11 +18,13 @@ public class CurrencyExchange extends JFrame implements ActionListener, WindowLi
 
     private String output = "";
 
-    private Container contentPane = this.getContentPane();
+    private final Container contentPane = this.getContentPane();
 
-    private JLabel eLabel = new JLabel("€:"), dLabel = new JLabel("¥:");
+    private final JLabel eLabel = new JLabel("€:");
+    private final JLabel dLabel = new JLabel("¥:");
 
-    private JTextField eArea = new JTextField(10), dArea = new JTextField(10);
+    private final JTextField eArea = new JTextField(10);
+    private final JTextField dArea = new JTextField(10);
 
     private double cValue, fValue;
 

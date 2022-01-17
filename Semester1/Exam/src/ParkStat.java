@@ -6,9 +6,14 @@
  */
 
 public class ParkStat implements Comparable<ParkStat> {
-    private int id;
-    private String name, address, website4, type, muga6;
-    private String longitude7, latitude8;
+    private final int id;
+    private final String name;
+    private final String address;
+    private final String website4;
+    private final String type;
+    private final String muga6;
+    private final String longitude7;
+    private final String latitude8;
 
     private static int sortingMethod = 0;
 
