@@ -24,16 +24,15 @@ public class Points extends JFrame implements ActionListener {
     /**
      * Sets GUI title, size and layout
      * Sets background colour of drawing area
+     * Stops program from running after window is closed
      */
     public Points() {
         this.setTitle("Points");
         this.setSize(800, 800);
         this.setLayout(new GridBagLayout());
         this.setResizable(false);
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-        //Background colour
         this.drawing_panel.setBackground(new Color(200, 160, 180));
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
 
