@@ -55,8 +55,8 @@ public class ShapesB extends JFrame implements ActionListener {
         this.button_black.setForeground(new Color(255, 255, 255));
 
         //Fonts
-        this.label_colour.setFont(new Font("TimesRoman", Font.BOLD, 28));
-        this.label_shape.setFont(new Font("TimesRoman", Font.BOLD, 28));
+        this.label_colour.setFont(new Font("Monospaced", Font.BOLD, 28));
+        this.label_shape.setFont(new Font("Monospaced", Font.BOLD, 28));
     }
 
 

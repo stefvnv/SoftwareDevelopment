@@ -123,7 +123,7 @@ public class Points extends JFrame implements ActionListener {
         @Override
         public void mouseReleased(MouseEvent e) {
 
-            //Adds new point to points array at x and y coordinates of mouse and repaints
+            //Adds new point to 'points' array at x and y coordinates of mouse and repaints
             points.add(new Point(e.getX(), e.getY()));
             repaint();
         }
