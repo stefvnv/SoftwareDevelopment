@@ -2,20 +2,24 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.geom.Ellipse2D;
 
 //2. Create a circle(player) on a canvas, allow the player to move with wasd keys
 public class PlayerA extends JFrame implements KeyListener {
 
-    private final CanvasPanel canvas = new CanvasPanel();
+    //Creates canvas
+    protected final CanvasPanel canvas = new CanvasPanel();
 
 
     /**
-     *
+     * Sets GUI title, size and adds key listener
+     * Stops program from running after window is closed
      */
     public PlayerA() {
-        this.setSize(800, 800);
         this.setTitle("PlayerA");
+        this.setSize(800, 800);
         this.addKeyListener(this);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
 
@@ -37,56 +41,67 @@ public class PlayerA extends JFrame implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+
+        //When a key is clicked, calls appropriate method
         if (e.getKeyCode() == 68) {
             canvas.stepRight();
         } else if (e.getKeyCode() == 65) {
             canvas.stepLeft();
         } else if (e.getKeyCode() == 87) {
             canvas.stepUp();
-        }else if (e.getKeyCode() == 83) {
+        } else if (e.getKeyCode() == 83) {
             canvas.stepDown();
         }
     }
 
+    /**
+     * Moves player on canvas according to user input
+     */
     static class CanvasPanel extends JPanel {
 
-        private int xPos;
-        private int yPos;
-        private final int xStep;
-        private final int yStep;
+        //Declares/initializes variables
+        private int xPos = 30;
+        private int yPos = 20;
+        private final int xStep = 50;
+        private final int yStep = 50;
+        Ellipse2D.Double player = new Ellipse2D.Double(xPos, yPos, 50, 50);
 
 
+        /**
+         * Constructor
+         * Sets background colour
+         */
         public CanvasPanel() {
             this.setBackground(Color.pink);
-
-            xPos = 30;
-            yPos = 20;
-            xStep = 50;
-            yStep = 50;
         }
+
 
         @Override
         public void paintComponent(Graphics g) {
+
+            //Initializes paintComponent and calls 'drawShapes'
             super.paintComponent(g);
-            drawShapes(g);
-        }
-
-
-        public void drawShapes(Graphics g) {
-            Graphics2D g2d = (Graphics2D) g;
-
-            g2d.setPaint(Color.black);
-
-            RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            rh.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-            g2d.setRenderingHints(rh);
-
-            g2d.fillOval(xPos, yPos, 50, 50);
+            drawShape(g);
         }
 
 
         /**
-         *
+         * Draws the player
+         */
+        public void drawShape(Graphics g) {
+
+            //casts g to Graphics2D
+            Graphics2D g2d = (Graphics2D) g;
+
+            //Sets paint to black and fills 'player'
+            g2d.setPaint(Color.black);
+            player = new Ellipse2D.Double(xPos, yPos, 50, 50);
+            g2d.fill(player);
+        }
+
+
+        /**
+         * Steps left
          */
         public void stepLeft() {
             xPos = xPos - xStep;
@@ -95,7 +110,7 @@ public class PlayerA extends JFrame implements KeyListener {
 
 
         /**
-         *
+         * Steps right
          */
         public void stepRight() {
             xPos = xPos + xStep;
@@ -104,7 +119,7 @@ public class PlayerA extends JFrame implements KeyListener {
 
 
         /**
-         *
+         * Steps up
          */
         public void stepUp() {
             yPos = yPos - yStep;
@@ -113,7 +128,7 @@ public class PlayerA extends JFrame implements KeyListener {
 
 
         /**
-         *
+         * Steps down
          */
         public void stepDown() {
             yPos = yPos + yStep;

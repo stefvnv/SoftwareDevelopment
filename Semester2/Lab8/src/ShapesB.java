@@ -187,7 +187,6 @@ public class ShapesB extends JFrame implements ActionListener {
          * Adds mouse and mouse motion listeners
          * Sets background colour and preferred size
          */
-
         public CanvasPanel() {
             this.addMouseListener(this);
             this.addMouseMotionListener(this);
