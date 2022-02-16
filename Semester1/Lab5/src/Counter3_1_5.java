@@ -21,7 +21,7 @@ public class Counter3_1_5 {
             String w = sc.next();
 
             // 2_1. Count the number of vowels in the file
-            vowels += String1_1_4.getVowels(w);
+            //vowels += String1_1.getVowels(w);
 
             //3. Print out the words in the file so that words longer than 3 chars will have the first and last letter stay the same but the middle letters jumbled
             jumble(w);
