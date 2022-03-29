@@ -1,10 +1,19 @@
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/*** Question 1
+ * Graphical User Interface - LocalEleStat
+ * ------------------
+ * Stefana Chiritescu
+ * A00282343
+ */
+
 public class LocalEleStat {
 
-    private String surname, firstName, party, localElectoralArea;
-    private Address address;
+    private final String no, surname, firstName, party, localElectoralArea;
+    private final Address address;
 
     public LocalEleStat(String s) {
         try {
@@ -16,15 +25,21 @@ public class LocalEleStat {
             address = new Address(sc.next());
             String[] part3 = sc.next().split(",");
 
-            surname = part1[1];
-            firstName = part1[2];
+            no = part1[0];
+            surname = encode(part1[1]);
+            firstName = encode(part1[2]);
 
-            party = part3[1];
+            party = encode(part3[1]);
             localElectoralArea = part3[2];
         } catch (Exception e) {
             //ignore exceptions
             throw new IllegalArgumentException("doesnt fit");
         }
+    }
+
+    private String encode(String s) {
+        ByteBuffer buffer = StandardCharsets.UTF_8.encode(s);
+        return StandardCharsets.UTF_8.decode(buffer).toString();
     }
 
     private String pad(String s, int padding) {
@@ -37,12 +52,17 @@ public class LocalEleStat {
 
     }
 
+    public String toCSV() {
+        return String.format("%s,%s,%s,%s,%s", no, surname, firstName, party, localElectoralArea);
+    }
+
     @Override
     public String toString() {
-
-
         return String.format("<tr><td>%s</td><td>%s</td><td>%s</td></tr>", (surname + "," + firstName), party, localElectoralArea);
-        //return surname + ", \t" + firstName + "\t(" + party +") \t\t\t" + localElectoralArea;
+    }
+
+    public String getNo() {
+        return no;
     }
 
     public String getSurname() {
@@ -65,7 +85,7 @@ public class LocalEleStat {
         return address;
     }
 
-    class Address {
+    static class Address {
         String[] lines;
 
         public Address(String s) {
