@@ -286,14 +286,14 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
             csv.addStat(new LocalEleStat(noText.getText() + "," + surnameText.getText() + "," +
                     firstnameText.getText() + ",\"" + addressText.getText() + "\"," + partyText.getText() + "," +
                     leaText.getText() + ",,,,,"));
-            System.out.println(firstnameText.getText() + surnameText.getText() + " was added to candidate list.");
+            System.out.println(firstnameText.getText() + " " + surnameText.getText() + " was added to candidate list.");
         }
 
         //Removes selected candidate that was clicked on table from csv when removeButton is clicked
         if (e.getSource() == removeButton) {
             String value = table.getModel().getValueAt(table.getSelectedRow(), 0).toString();
             csv.removeStat(value);
-            System.out.println(firstnameText.getText() + surnameText.getText() + " was added to candidate list.");
+            System.out.println("Candidate was removed from candidate list.");
             updateTable();
         }
     }
