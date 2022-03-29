@@ -34,20 +34,28 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
     private final JButton addButton = new JButton("Add");
     private final JButton removeButton = new JButton("Remove");
 
+
+    private final JLabel noLabel = new JLabel("Number:");
     private final JLabel surnameLabel = new JLabel("Surname:");
     private final JLabel firstnameLabel = new JLabel("First name:");
     private final JLabel addressLabel = new JLabel("Address:");
     private final JLabel partyLabel = new JLabel("Party:");
     private final JLabel leaLabel = new JLabel("Local Electoral Area:");
 
+    private final JTextField noText = new JTextField(4);
     private final JTextField surnameText = new JTextField(12);
     private final JTextField firstnameText = new JTextField(12);
     private final JTextField addressText = new JTextField(12);
     private final JTextField partyText = new JTextField(12);
     private final JTextField leaText = new JTextField(12);
 
+
     private ReadCSV csv;
 
+    /**
+     * Sets GUI title, size, layout and sets resizeable to false
+     * Adds colour to textboxes and labels
+     */
     public GUI() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle("GUI");
@@ -56,47 +64,52 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
         this.addWindowListener(this);
         this.setResizable(false);
 
-        this.textArea.setBackground(new Color(200,160,180));
-        this.table.setBackground(new Color(200,160,180));
-        this.p3.setBackground(new Color(200,160,180));
+        //Colours
+        this.textArea.setBackground(new Color(200, 160, 180));
+        this.table.setBackground(new Color(200, 160, 180));
+        this.p3.setBackground(new Color(200, 160, 180));
     }
 
+    /**
+     * Initializes the GUI
+     */
     public void init() {
 
+        //Creates file chooser and sets path to current directory
         File selectedFile = null;
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setCurrentDirectory(new File("."));
 
         int result = fileChooser.showOpenDialog(this.getContentPane());
 
+        //Opens selected file
         if (result == JFileChooser.APPROVE_OPTION) {
             selectedFile = fileChooser.getSelectedFile();
-
         }
 
+        //Sets selected file as csv
         csv = new ReadCSV(selectedFile);
 
+        //Creates a combobox
         DefaultComboBoxModel<String> options = new DefaultComboBoxModel<>();
         choices = new JComboBox<>(options);
 
-
+        //Populates combobox headings with local electoral areas
         for (LocalEleStat stat : csv.getStats()) {
-
             String area = stat.getLocalElectoralArea();
 
             if (options.getIndexOf(area) == -1) {
                 options.addElement(area);
             }
         }
-
         choices.addActionListener(this);
+
+
+        //Adds appropriate items to each panel and sets panels using gridbag layout
 
         //___________________________________________
         // Panel 1
-
         p1.setLayout(new GridBagLayout());
-
-
         GridBagConstraints c = new GridBagConstraints();
 
         c.insets = new Insets(0, 5, 0, 5);
@@ -120,13 +133,10 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
 
         //___________________________________________
         // Panel 2
-
         p2.setLayout(new GridBagLayout());
-
         c = new GridBagConstraints();
 
         updateTable();
-
         table.setAutoCreateRowSorter(true);
 
         JScrollPane scrollPane = new JScrollPane(table);
@@ -151,80 +161,85 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
         //___________________________________________
         // Panel 3
 
+        addButton.addActionListener(this);
         p3.setLayout(new GridBagLayout());
 
+        c = new GridBagConstraints();
+        c.fill = GridBagConstraints.HORIZONTAL;
 
-        GridBagConstraints d = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        p3.add(noLabel, c);
 
-        d.insets = new Insets(0, 5, 0, 5);
+        c.gridx = 1;
+        c.gridy = 0;
+        p3.add(noText, c);
 
-        d.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 0;
+        c.gridy = 1;
+        p3.add(surnameLabel, c);
 
-        d.gridx = 0;
-        d.gridy = 0;
+        c.gridx = 1;
+        c.gridy = 1;
+        p3.add(surnameText, c);
 
-        p3.add(surnameLabel, d);
+        c.gridx = 0;
+        c.gridy = 2;
+        p3.add(firstnameLabel, c);
 
-        d.gridx = 1;
-        d.gridy = 0;
-        p3.add(surnameText, d);
+        c.gridx = 1;
+        c.gridy = 2;
+        p3.add(firstnameText, c);
 
-        d.gridx = 0;
-        d.gridy = 1;
-        p3.add(firstnameLabel, d);
+        c.gridx = 0;
+        c.gridy = 3;
+        p3.add(addressLabel, c);
 
-        d.gridx = 1;
-        d.gridy = 1;
-        p3.add(firstnameText, d);
+        c.gridx = 1;
+        c.gridy = 3;
+        p3.add(addressText, c);
 
-        d.gridx = 0;
-        d.gridy = 2;
-        p3.add(addressLabel, d);
+        c.gridx = 0;
+        c.gridy = 4;
+        p3.add(partyLabel, c);
 
-        d.gridx = 1;
-        d.gridy = 2;
-        p3.add(addressText, d);
+        c.gridx = 1;
+        c.gridy = 4;
+        p3.add(partyText, c);
 
-        d.gridx = 0;
-        d.gridy = 3;
-        p3.add(partyLabel, d);
+        c.gridx = 0;
+        c.gridy = 5;
+        p3.add(leaLabel, c);
 
-        d.gridx = 1;
-        d.gridy = 3;
-        p3.add(partyText, d);
+        c.gridx = 1;
+        c.gridy = 5;
+        p3.add(leaText, c);
 
-        d.gridx = 0;
-        d.gridy = 4;
-        p3.add(leaLabel, d);
+        c.gridx = 0;
+        c.gridy = 6;
+        c.gridwidth = 2;
+        p3.add(addButton, c);
 
-        d.gridx = 1;
-        d.gridy = 4;
-        p3.add(leaText, d);
-
-        d.gridx = 0;
-        d.gridy = 5;
-        d.gridwidth = 2;
-        p3.add(addButton, d);
-
-        d.fill = GridBagConstraints.BOTH;
-        d.weightx = 1.0;
-        d.weighty = 1.0;
-
+        c.fill = GridBagConstraints.BOTH;
+        c.weightx = 1.0;
+        c.weighty = 1.0;
 
         //---------------------------------
 
-
+        //Add panels to tabbed pane and sets visibility to true
         tabbedPane.add("Select Area", p1);
         tabbedPane.add("View All", p2);
         tabbedPane.add("Add New", p3);
-
         tabbedPane.addChangeListener(this);
 
         this.add(tabbedPane, BorderLayout.CENTER);
-
         this.setVisible(true);
     }
 
+
+    /**
+     *
+     */
     private void updateTable() {
         String[] cols = csv.getHeadings();
 
@@ -242,6 +257,10 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
         table.setModel(model);
     }
 
+
+    /**
+     *
+     */
     public void setArea(String area) {
         textArea.setText(" ");
         StringBuilder display = new StringBuilder("<html><table>");
@@ -265,7 +284,8 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
             setArea(area);
         }
         if (e.getSource() == addButton) {
-            System.out.println("You are a fish");
+            csv.addStat(new LocalEleStat(noText.getText() + "," + surnameText.getText() + "," +
+                    firstnameText.getText() + ",\"" + addressText.getText() + "\"," + partyText.getText() + "," + leaText.getText() + ",,,,,"));
         }
         if (e.getSource() == removeButton) {
             String value = table.getModel().getValueAt(table.getSelectedRow(), 0).toString();

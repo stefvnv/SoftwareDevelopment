@@ -15,6 +15,7 @@ public class LocalEleStat {
     private final String no, surname, firstName, party, localElectoralArea;
     private final Address address;
 
+    //Constructor
     public LocalEleStat(String s) {
         try {
             Scanner sc = new Scanner(s);
@@ -49,7 +50,6 @@ public class LocalEleStat {
         }
 
         return (s + temp).substring(0, padding);
-
     }
 
     public String toCSV() {
@@ -91,7 +91,6 @@ public class LocalEleStat {
         public Address(String s) {
             lines = s.split(",");
         }
-
 
         @Override
         public String toString() {
