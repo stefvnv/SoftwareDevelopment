@@ -12,12 +12,13 @@ import java.util.Scanner;
 
 public class ReadCSV {
 
+    //Initializes ArrayList and String array
     private final ArrayList<LocalEleStat> stats = new ArrayList<>();
     private String[] headings;
 
+    //Constructor
     public ReadCSV(File f) {
         try {
-
             Scanner sc = new Scanner(f);
 
             //Skips first heading and adds second row to headings
@@ -65,7 +66,7 @@ public class ReadCSV {
     }
 
     /**
-     * Creates output file
+     * Creates output file with random number
      */
     public void writeFile() {
         try {

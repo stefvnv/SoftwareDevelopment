@@ -22,6 +22,7 @@ public class LocalEleStat {
 
             sc.useDelimiter("\"");
 
+            //Splits string array on commas
             String[] part1 = sc.next().split(",");
             address = new Address(sc.next());
             String[] part3 = sc.next().split(",");
@@ -34,24 +35,21 @@ public class LocalEleStat {
             localElectoralArea = part3[2];
         } catch (Exception e) {
             //ignore exceptions
-            throw new IllegalArgumentException("doesnt fit");
+            throw new IllegalArgumentException("Doesn't fit");
         }
     }
 
+    /**
+     * Sets encoding to UTF_8
+     */
     private String encode(String s) {
         ByteBuffer buffer = StandardCharsets.UTF_8.encode(s);
         return StandardCharsets.UTF_8.decode(buffer).toString();
     }
 
-    private String pad(String s, int padding) {
-        String temp = "";
-        for (int i = 0; i < padding; i++) {
-            temp = temp + " ";
-        }
-
-        return (s + temp).substring(0, padding);
-    }
-
+    /**
+     * Formats strings
+     */
     public String toCSV() {
         return String.format("%s,%s,%s,%s,%s", no, surname, firstName, party, localElectoralArea);
     }
@@ -95,7 +93,6 @@ public class LocalEleStat {
         @Override
         public String toString() {
             return Arrays.toString(lines);
-
         }
     }
 }

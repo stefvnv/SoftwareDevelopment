@@ -18,7 +18,7 @@ import java.io.File;
 
 public class GUI extends JFrame implements ActionListener, ChangeListener, WindowListener {
 
-    //Initialized tabbed pane, table, panels, combobox, text pane, buttons, labels and text fields
+    //Initializes tabbed pane, table, panels, combobox, text pane, buttons, labels, text fields and ReadCSV
     private final JTabbedPane tabbedPane = new JTabbedPane();
 
     private final JTable table = new JTable();
@@ -48,7 +48,6 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
     private final JTextField addressText = new JTextField(12);
     private final JTextField partyText = new JTextField(12);
     private final JTextField leaText = new JTextField(12);
-
 
     private ReadCSV csv;
 
@@ -160,7 +159,6 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
 
         //___________________________________________
         // Panel 3
-
         addButton.addActionListener(this);
         p3.setLayout(new GridBagLayout());
 
@@ -224,7 +222,6 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
         c.weightx = 1.0;
         c.weighty = 1.0;
 
-        //---------------------------------
 
         //Add panels to tabbed pane and sets visibility to true
         tabbedPane.add("Select Area", p1);
@@ -238,7 +235,7 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
 
 
     /**
-     *
+     * Repopulates table by re-reading arraylist
      */
     private void updateTable() {
         String[] cols = csv.getHeadings();
@@ -259,17 +256,15 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
 
 
     /**
-     *
+     * Sets area by populating it with arraylist
      */
     public void setArea(String area) {
         textArea.setText(" ");
         StringBuilder display = new StringBuilder("<html><table>");
         for (LocalEleStat stat : csv.getStats()) {
             if (stat.getLocalElectoralArea().equals(area)) {
-                display.append(stat.toString());
-
+                display.append(stat);
             }
-
         }
         display.append("</table></html>");
 
@@ -279,17 +274,26 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        //Sets area to selected choices
         if (e.getSource() == choices) {
             String area = (String) choices.getSelectedItem();
             setArea(area);
         }
+
+        //Gets text from input boxes and adds to csv when addButton is clicked
         if (e.getSource() == addButton) {
             csv.addStat(new LocalEleStat(noText.getText() + "," + surnameText.getText() + "," +
-                    firstnameText.getText() + ",\"" + addressText.getText() + "\"," + partyText.getText() + "," + leaText.getText() + ",,,,,"));
+                    firstnameText.getText() + ",\"" + addressText.getText() + "\"," + partyText.getText() + "," +
+                    leaText.getText() + ",,,,,"));
+            System.out.println(firstnameText.getText() + surnameText.getText() + " was added to candidate list.");
         }
+
+        //Removes selected candidate that was clicked on table from csv when removeButton is clicked
         if (e.getSource() == removeButton) {
             String value = table.getModel().getValueAt(table.getSelectedRow(), 0).toString();
             csv.removeStat(value);
+            System.out.println(firstnameText.getText() + surnameText.getText() + " was added to candidate list.");
             updateTable();
         }
     }
@@ -299,6 +303,7 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
 
         JTabbedPane temp = (JTabbedPane) changeEvent.getSource();
 
+        //Checks if a tab is selected and updates the tab
         if (temp.getSelectedIndex() == 0) {
             String area = (String) choices.getSelectedItem();
             setArea(area);
@@ -314,6 +319,8 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
 
     @Override
     public void windowClosing(WindowEvent windowEvent) {
+
+        //Calls writeFile method from ReadCSV Class
         csv.writeFile();
     }
 
@@ -338,6 +345,9 @@ public class GUI extends JFrame implements ActionListener, ChangeListener, Windo
     }
 
     public static void main(String[] args) {
+
+        //Creates an instance of the GUI
         new GUI().init();
+
     }
 }
